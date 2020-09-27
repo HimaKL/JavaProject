@@ -1,0 +1,187 @@
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1
+$ git init
+Initialized empty Git repository in C:/Users/himar/Desktop/JavaProject1/.git/
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Hello.class
+        Hello.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git add .
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Hello.class
+        new file:   Hello.java
+
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git commit -m "created new project in java"
+[master (root-commit) d7897f0] created new project in java
+ 2 files changed, 13 insertions(+)
+ create mode 100644 Hello.class
+ create mode 100644 Hello.java
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git remote add origin https://github.com/HimaKL/JavaProject.git
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 807 bytes | 134.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/HimaKL/JavaProject.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ touch readme.txt
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ touch index.html
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git status
+HEAD detached at d7897f0
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git add ,
+fatal: pathspec ',' did not match any files
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git add .
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git status
+HEAD detached at d7897f0
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   index.html
+        new file:   readme.txt
+
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((d7897f0...))
+$ git commit -m "added new files to the project"
+[detached HEAD a6bdc4c] added new files to the project
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+ create mode 100644 readme.txt
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git pull
+You are not currently on a branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git pull orgin master
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git pull origin master
+From https://github.com/HimaKL/JavaProject
+ * branch            master     -> FETCH_HEAD
+HEAD is up to date.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git pull --rebase origin master
+From https://github.com/HimaKL/JavaProject
+ * branch            master     -> FETCH_HEAD
+HEAD is up to date.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git push origin master
+Everything up-to-date
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git config --global pull.rebase true
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git config --global rebase.autostash true
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git status
+HEAD detached from d7897f0
+nothing to commit, working tree clean
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 ((a6bdc4c...))
+$ git rebase HEAD master
+Successfully rebased and updated refs/heads/master.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git pull origin master
+From https://github.com/HimaKL/JavaProject
+ * branch            master     -> FETCH_HEAD
+Current branch master is up to date.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 332 bytes | 18.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/HimaKL/JavaProject.git
+   d7897f0..a6bdc4c  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+himar@DESKTOP-RM0DFSR MINGW64 ~/Desktop/JavaProject1 (master)
